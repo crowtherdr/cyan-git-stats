@@ -1,0 +1,25 @@
+{
+  "name": "cyan-git-stats",
+  "version": "0.0.0",
+  "description": "cyan-git-stats ==============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerpeterson/cyan-git-stats.git"
+  },
+  "author": "Tyler Peterson <petersontb@familysearch.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tylerpeterson/cyan-git-stats/issues"
+  },
+  "homepage": "https://github.com/tylerpeterson/cyan-git-stats",
+  "dependencies": {
+    "uritemplate": "~0.3.4",
+    "q": "~1.0.1",
+    "superagent": "~0.18.2",
+    "debug": "~2.0.0"
+  }
+}
