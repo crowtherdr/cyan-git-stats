@@ -42,6 +42,7 @@ function nextRepoStats() {
             });
             debug('commits:', commits, 'additions:', additions, 'net:', net);
           })
+          nextRepoStats();
         } else {
           debug('not ok');
         }
