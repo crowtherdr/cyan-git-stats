@@ -6,6 +6,7 @@ var debug = require('debug')('cyan-git-stats');
 var personalAccessToken = config.personalAccessToken;
 var team = config.teams[config.teams._order[0]];
 var repo = team.repos[0];
+var agent = config.agent;
 
 debug('token', personalAccessToken);
 debug('repo', repo);
@@ -13,7 +14,7 @@ debug('repo', repo);
 request.get('https://api.github.com/repos/' + repo + '/stats/contributors')
     .auth(personalAccessToken, 'x-oauth-basic')
     .accept('application/vnd.github.v3+json')
-    .set('Agent', 'tylerpeterson')
+    .set('Agent', agent)
     .end(function (res) {
       if (res.ok) {
         // debug('ok', JSON.stringify(res.body, null, '  '));
@@ -31,7 +32,7 @@ request.get('https://api.github.com/repos/' + repo + '/stats/contributors')
           if (weeks.length > 12) {
             weeks = weeks.slice(-12);
           }
-          
+
           weeks.forEach(function (week) {
             commits += week.c;
             additions += week.a;
