@@ -11,6 +11,12 @@ var agent = config.agent;
 
 function nextRepoStats() {
   var repo = repos.shift();
+
+  if (!repo) {
+    debug('DONE!');
+    return;
+  }
+
   debug('repo', repo);
 
   request.get('https://api.github.com/repos/' + repo + '/stats/contributors')
